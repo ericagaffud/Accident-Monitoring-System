@@ -12,7 +12,7 @@
     justify-content: space-between;
 
     .login-background {
-        background-image: url(/assets/Login/login-background.png); /* Background image */
+        background-image: url(../../assets/Login/login-background.png); /* Background image */
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -83,7 +83,7 @@
     }
 
     .login-accent-background {
-        background-image: url(/assets/Login/background-accent.png);
+        background-image: url(../../assets/Login/background-accent.png);
         background-position: left;
         background-repeat: no-repeat;
         background-size: cover;
