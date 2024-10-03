@@ -1,0 +1,169 @@
+:root {
+    --header-height: clamp(4rem, 3.265rem + 4.278vw, 6rem);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    padding: clamp(1rem, 0.265rem + 4.278vw, 3rem);
+    background: linear-gradient(90deg, #00022B 30.15%, #2B2F7A 51.5%, #00032E 80.49%);
+    box-shadow: 0px 0.420833px 0.841667px rgba(45, 49, 128, 0.25);
+
+    img {
+        width: clamp(6rem, 4.531rem + 8.545vw, 10rem);
+    }
+
+    &-menu {
+        color: #fff;
+        font-size: 1.5rem;
+
+        &-nav {
+            width: clamp(16rem, 10.118rem + 34.225vw, 32rem);
+            height: 100vh;
+            position: absolute;
+            background: linear-gradient(90deg, #00022B 10.93%, #2B2F7A 51.38%, #00032E 95.69%);
+            top: 0;
+            right: 0;
+            padding: 2rem 0.5rem;
+
+            display: none;
+
+            &-title {
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+                padding-inline: clamp(0.5rem, -0.419rem + 5.348vw, 3rem);
+
+                &-name {
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    gap: 10px;
+                    
+                    h1 {
+                        font-size: clamp(1.3rem, 1.116rem + 1.068vw, 1.8rem);
+                        opacity: 0.6;
+                        font-weight: 600;                    
+                    }
+
+                    i {
+                        font-size: clamp(1.8rem, 1.616rem + 1.07vw, 2.3rem);
+                        opacity: 0.8;
+                    }
+                }
+                &-date {
+                    font-size: clamp(0.9rem, 0.79rem + 0.641vw, 1.2rem);
+                    opacity: 0.6;
+                }
+
+                hr {
+                    width: 100%;
+                    margin-block: 5px;
+                    height: 0px;
+                    border: none;
+                    border-top: 1px solid #fff;
+                    opacity: 0.5;
+                }
+            }
+
+            nav {
+                padding-block: 3rem;
+
+                .nav-items {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: clamp(0.5rem, 0.316rem + 1.07vw, 1rem);
+
+                    a {
+                        font-size: clamp(1.1rem, 0.99rem + 0.642vw, 1.4rem);
+                        text-decoration: none;
+                        color: #fff;
+                    }
+                }
+                
+                img {
+                    width: clamp(10rem, 8.162rem + 10.695vw, 15rem);
+                    position: absolute;
+                    bottom: 2rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    :root {
+        --header-height: clamp(6rem, 3.333rem + 4.167vw, 10rem);
+        --container-width-like: clamp(2rem, -6.667rem + 13.542vw, 15rem);
+        --heading-1: clamp(1.1rem, 0.633rem + 0.729vw, 1.8rem);
+        --heading-2: clamp(0.8rem, 0.333rem + 0.729vw, 1.5rem);
+    }
+
+    .header {
+        padding-inline: var(--container-width-like);
+
+        img {
+            width: clamp(9rem, 7rem + 3.125vw, 12rem);
+        }
+
+        &-menu {
+            #headerMenu {
+                display: none;
+            }
+
+            &-nav {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+                background: transparent;
+                right: var(--container-width-like);
+
+                height: var(--header-height);
+                padding: unset;
+                
+                &-title {
+                    padding-inline: 0;
+
+                    &-name {
+                        h1 {
+                            font-size: var(--heading-1);
+                        }
+                    }
+
+                    &-date {
+                        font-size: var(--heading-2);
+                    }
+
+                    hr {
+                        width: clamp(32rem, 13.333rem + 29.167vw, 60rem);
+                    }
+                }
+
+                nav {
+                    padding-block-end: clamp(4.7rem, 3.833rem + 1.354vw, 6rem);
+
+                    .nav-items {
+                        flex-direction: row;
+                        margin-right: clamp(-12rem, 0rem + -18.75vw, -30rem);
+                        gap: clamp(1rem, -0.333rem + 2.083vw, 3rem);
+                        padding-left: 1rem;
+
+                        a {
+                            font-size: var(--heading-1);
+                        }
+                    }
+
+                    img {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
