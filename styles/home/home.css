@@ -121,21 +121,30 @@
   background-color: #090C3F;
   padding: clamp(0.938rem, -0.285rem + 7.114vw, 3.125rem);
   border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.homeDiv--major > img {
+  position: absolute;
+  width: clamp(30rem, 20.809rem + 53.476vw, 55rem);
+  top: clamp(1rem, 0.632rem + 2.139vw, 2rem);
 }
 .homeDiv--major--chart {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
 }
 .homeDiv--major--chart h3 {
   font-size: var(--tier-3);
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .homeDiv--major--chart p {
   color: #00A124;
   font-size: var(--tier-5);
 }
 .homeDiv--major--chart canvas {
+  margin-top: 2rem;
   width: clamp(10rem, 8.529rem + 8.556vw, 14rem);
   height: clamp(10rem, 8.529rem + 8.556vw, 14rem);
 }
@@ -315,6 +324,9 @@
   }
   .homeDiv--upper {
     gap: 2rem;
+  }
+  .homeDiv--major > img {
+    top: clamp(2rem, 0rem + 3.125vw, 5rem);
   }
   .homeDiv--major--measurements {
     padding-inline: 15px;

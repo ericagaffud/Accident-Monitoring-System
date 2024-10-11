@@ -65,10 +65,11 @@
             </div>
         </div>
         <div class="homeDiv--major">
+            <img src="../../assets/Home/subscribers-background.png" alt="">
             <div class="homeDiv--major--chart">
-                <h3>SUBSCRIBERS</h3>
                 <canvas id="myPieChart"></canvas>
-                <!-- <p>Active</p> -->
+                <h3>SUBSCRIBERS</h3>
+                <p>Active</p>
             </div>
             <div class="homeDiv--major--users-carousel">
                 <img src="../../assets/Users/user_1.png" alt="">
@@ -138,17 +139,6 @@
     <script src="../../scripts/home.js"></script>
     <script src="../../scripts/chart.js"></script>
     <script>
-        // Chart.register({
-        //     id: 'customBackground',
-        //     beforeDraw: (chart) => {
-        //         const ctx = chart.ctx;
-        //         ctx.save();
-        //         ctx.fillStyle = 'rgba(240, 240, 240, 1)'; // Background color
-        //         ctx.fillRect(0, 0, chart.width, chart.height); // Fill the entire canvas
-        //         ctx.restore();
-        //     }
-        // });
-
         const ctx = document.getElementById('myPieChart').getContext('2d');
         const myPieChart = new Chart(ctx, {
             type: 'doughnut',
