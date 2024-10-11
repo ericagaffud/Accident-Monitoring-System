@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/home/home.css">
+    <link rel="stylesheet" href="../../styles/header/header.css">
+    <title>AMS - Benefactor</title>
+</head>
+<body>
+    <!-- Header Here-->
+    <div id="header-placeholder"></div>
+    <div class="homeDiv">
+        <div class="homeDiv--upper">
+            <div class="homeDiv--upper--risks">
+                <hr>
+                <h4 class="tier-4">Recent Risks Record</h4>
+                <div class="homeDiv--upper--risks--users">
+                    <div class="homeDiv--upper--risks--users__user">
+                        <img src="../../assets/Users/user_1.png" alt="">
+                        <div>
+                            <h4>Courtney Henry</h4>
+                            <h6>Heart Rate: 33bpm</h6><br>
+                            <p>September 31, 2024 05:18</p>
+                        </div>
+                    </div>
+                    <div class="homeDiv--upper--risks--users__user">
+                        <img src="../../assets/Users/user_2.png" alt="">
+                        <div>
+                            <h4>Courtney Henry</h4>
+                            <h6>Heart Rate: 33bpm</h6><br>
+                            <p>September 31, 2024 05:18</p>
+                        </div>
+                    </div>
+                    <div class="homeDiv--upper--risks--users__user">
+                        <img src="../../assets/Users/user_3.png" alt="">
+                        <div>
+                            <h4>Courtney Henry</h4>
+                            <h6>Heart Rate: 33bpm</h6><br>
+                            <p>September 31, 2024 05:18</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="homeDiv--upper--notifs">
+                <h4>Recent Notifications</h4>
+                <div class="homeDiv--upper--notifs__notif">
+                    <div class="homeDiv--upper--notifs__notif__white">
+                        <img src="../../assets/Users/user_1.png" alt="">
+                        <h3>Erica D. Gaffud</h3>
+                        <div class="user-status"></div>
+                    </div>
+                    <div class="homeDiv--upper--notifs__notif__colored">
+                        <h5>Address</h5>
+                        <h5>Connected 31 minutes ago</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="homeDiv--major">
+            <div class="homeDiv--major--chart">
+                <h3>SUBSCRIBERS</h3>
+                <canvas id="myPieChart"></canvas>
+                <!-- <p>Active</p> -->
+            </div>
+            <div class="homeDiv--major--users-carousel">
+                <img src="../../assets/Users/user_1.png" alt="">
+                <img src="../../assets/Users/user_2.png" alt="">
+                <img src="../../assets/Users/user_3.png" alt="">
+                <!-- <img src="../../assets/Users/user_4.png" alt=""> -->
+            </div>
+            <div class="homeDiv--major--measurement">
+                <h4>Real Time Measurement</h4>
+                <div class="homeDiv--major--measurements">
+                    <div class="homeDiv--major--measurements__content">
+                        <div class="homeDiv--major--measurements__content__info">
+                            <img src="../../assets/Users/user_2.png" alt="">
+                            <div>
+                                <h4>Guy Hawkins</h4>
+                                <h6>4140 Parker Rd. Allentown, New Mexico 31134</h6>
+                            </div>
+                        </div>
+                        <div class="homeDiv--major--measurements__content__reading">
+                            <h6>Heart Rate: 91bpm | Oxygen Level: 95%</h6>
+                            <h6>Dec 4, 2019 21:42</h6>
+                        </div>
+                    </div>
+                    <div class="homeDiv--major--measurements__content">
+                        <div class="homeDiv--major--measurements__content__info">
+                            <img src="../../assets/Users/user_4.png" alt="">
+                            <div>
+                                <h3>Ronald Richards</h3>
+                                <h6>3891 Ranchview Dr. Richardson, California 62639</h6>
+                            </div>
+                        </div>
+                        <div class="homeDiv--major--measurements__content__reading">
+                            <h6>Heart Rate: 90bpm | Oxygen Level: 97%</h6>
+                            <h6>Dec 4, 2019 21:42</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="homeDiv--major--measurement__outlineDiv"></div>
+            </div>
+        </div>
+        <div class="homeDiv--infograph">
+            <hr>
+            <h3>Accident Monitoring System</h3>
+            <div class="homeDiv--infograph--infoDiv">
+                <img src="../../assets/Infograph/infograph_1.png" alt="">
+                <h5>Real-time incident detection</h5>
+                <p>The system continuously monitors for accidents, providing instant recognition when an incident occurs.</p>
+            </div>
+            <div class="homeDiv--infograph--infoDiv">
+                <img src="../../assets/Infograph/infograph_2.png" alt="">
+                <h5>Real-time incident detection</h5>
+                <p>The system continuously monitors for accidents, providing instant recognition when an incident occurs.</p>
+            </div>
+            <div class="homeDiv--infograph--infoDiv">
+                <img src="../../assets/Infograph/infograph_3.png" alt="">
+                <h5>Real-time incident detection</h5>
+                <p>The system continuously monitors for accidents, providing instant recognition when an incident occurs.</p>
+            </div>
+            <div class="homeDiv--infograph--infoDiv">
+                <img src="../../assets/Infograph/infograph_4.png" alt="">
+                <h5>Real-time incident detection</h5>
+                <p>The system continuously monitors for accidents, providing instant recognition when an incident occurs.</p>
+            </div>
+            <img src="../../assets/Infograph/infograph.png" alt="">
+        </div>
+    </div>
+    <script src="../../scripts/home.js"></script>
+    <script src="../../scripts/chart.js"></script>
+    <script>
+        // Chart.register({
+        //     id: 'customBackground',
+        //     beforeDraw: (chart) => {
+        //         const ctx = chart.ctx;
+        //         ctx.save();
+        //         ctx.fillStyle = 'rgba(240, 240, 240, 1)'; // Background color
+        //         ctx.fillRect(0, 0, chart.width, chart.height); // Fill the entire canvas
+        //         ctx.restore();
+        //     }
+        // });
+
+        const ctx = document.getElementById('myPieChart').getContext('2d');
+        const myPieChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Active', 'Inactive'], 
+                datasets: [{
+                    label: 'My Dataset',
+                    data: [300, 50],
+                    backgroundColor: [
+                        '#DC0083',
+                        'rgba(240, 240, 240, 1)'
+                    ],
+                    borderColor: [
+                        '#DC0083',
+                        'rgba(240, 240, 240, 1)'
+                    ],
+                    // borderRadius: 30
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    }
+                },
+                elements: {
+                    arc: {
+                        // borderRadius: 30
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

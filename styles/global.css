@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -13,6 +14,17 @@ h1, h2, h3, h4, h5, h6, p {
   --secondary-color: #3C0753;
   --accent-color: #720455;
   --accent-color-tint: #910A67;
+  --accent-color-shade: #C70092;
+  --padding-mobile: clamp(1rem, 0.265rem + 4.278vw, 3rem);
+  --padding-desktop: clamp(2rem, -6.667rem + 13.542vw, 15rem);
+  --tier-1: clamp(1.7rem, 1.516rem + 1.07vw, 2.2rem);
+  --tier-2: clamp(1.5rem, 1.316rem + 1.07vw, 2rem);
+  --tier-3: clamp(1.3rem, 1.116rem + 1.07vw, 1.8rem);
+  --tier-4: clamp(1.1rem, 0.99rem + 0.642vw, 1.4rem);
+  --tier-5: clamp(0.9rem, 0.79rem + 0.642vw, 1.2rem);
+  --tier-6: clamp(0.7rem, 0.59rem + 0.642vw, 1rem);
+  --tier-7: clamp(0.5rem, 0.39rem + 0.642vw, 0.8rem);
+  --text-opacity: 0.8;
 }
 
 .primary__btn {
@@ -29,4 +41,28 @@ h1, h2, h3, h4, h5, h6, p {
   box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.25);
   border: transparent;
   border-radius: 10px;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+.user-status {
+  background-color: green;
+  position: absolute;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+@media only screen and (min-width: 1024px) {
+  :root {
+    --tier-1: clamp(1.55rem, 1.366rem + 1.07vw, 2.05rem);
+    --tier-2: clamp(1.35rem, 1.166rem + 1.07vw, 1.85rem);
+    --tier-3: clamp(1.15rem, 0.966rem + 1.07vw, 1.65rem);
+    --tier-4: clamp(0.95rem, 0.84rem + 0.642vw, 1.25rem);
+    --tier-5: clamp(0.75rem, 0.64rem + 0.642vw, 1.05rem);
+    --tier-6: clamp(0.55rem, 0.44rem + 0.642vw, 0.85rem);
+    --tier-7: clamp(0.35rem, 0.24rem + 0.642vw, 0.65rem);
+  }
 }/*# sourceMappingURL=global.css.map */
