@@ -138,6 +138,100 @@
         }
     }
 
+    &--upper-user {
+        &--name {
+            margin-bottom: 1rem;
+
+            &__user {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    width: 75px;
+                }
+
+                div {
+                    h2 {
+                        font-size: var(--tier-3);
+                    }
+
+                    h5 {
+                        font-size: var(--tier-5);
+                        opacity: var(--text-opacity);
+                    }
+                }
+            }
+
+            &__buttons {
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                gap: 1rem;
+
+                i {
+                    color: #fff;
+                    font-size: clamp(1.8rem, 1.616rem + 1.07vw, 2.3rem);;
+                }
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 5px 2rem;
+                    border-radius: 15px;
+
+                    font-size: var(--tier-6);
+                    color: var(--accent-color);
+                    font-weight: bold;
+
+                    img {
+                        width: 20px;
+                    }
+                }
+            }
+        }
+
+        &--reading {
+            display: grid;
+            gap: 1rem;
+
+            &__content {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+
+                padding: 1rem;
+                background-color: var(--accent-color-shade);
+                border-radius: 20px;
+
+                img {
+                    width: 5rem;
+                }
+
+                div {
+                    text-align: center;
+
+                    h5 {
+                        font-size: var(--tier-5);
+                        font-weight: 100;
+                        margin-bottom: 10px;
+                    }
+
+                    h3 {
+                        font-size: var(--tier-3);
+                    }
+
+                    h6 {
+                        font-size: var(--tier-6);
+                        opacity: var(--text-opacity);
+                        font-weight: 100;
+                    }
+                }
+            }
+        }
+    }
+
     &--major {
         display: flex;
         flex-direction: column;
@@ -160,6 +254,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-bottom: clamp(1rem, 0.759rem + 1.4vw, 3rem);
 
             z-index: 2;
 
@@ -258,6 +353,40 @@
                         }
                     }
                 }
+
+                &__user {
+                    padding: 10px;
+
+                    &__date {
+                        display: flex;
+                        justify-content: space-between;
+                        border-bottom: 0.5px solid #fff;
+                        padding-bottom: 5px;
+
+                        p {
+                            font-size: var(--tier-7);
+                            opacity: var(--text-opacity);
+                        }
+                    }
+
+                    &__readings {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 10px;
+                        padding-block: 10px;
+
+                        div {
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+
+                            img {
+                                width: auto;
+                                height: clamp(1.8rem, 1.616rem + 1.07vw, 2.3rem);
+                            }
+                        }
+                    }
+                }
             }
 
             &__outlineDiv {
@@ -300,7 +429,7 @@
         &--infoDiv {
             text-align: center;
             background: rgba(0, 14, 255, 0.05);
-            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 2px 1px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 7%), inset 2px 1px 4px rgba(0, 0, 0, 7%);
             border-radius: 30px;
             padding: 15px;
 
@@ -329,11 +458,44 @@
     }
 }
 
+@media only screen and (min-width: 425px) {
+    .homeDiv--upper-user--reading {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media only screen and (min-width: 768px) {
     .homeDiv {
         &--upper {
             display: grid;
             grid-template-columns: 1fr 1fr;
+
+            &-user--name {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            &-user--reading {
+                grid-template-columns: repeat(3, 1fr);
+
+                &__content {
+                    padding: clamp(1rem, -2.251rem + 5.079vw, 2rem) 1rem;
+                }
+            }
+
+        }
+
+        &--major {
+            &--measurement {
+                &s {
+                    &__user {
+                        &__readings {
+                            grid-template-columns: repeat(4, 1fr) !important;
+                        }
+                    }
+                }
+            }
         }
 
         &--infograph {
@@ -396,6 +558,14 @@
 
         &--upper {
             gap: 2rem;
+
+            &-user--reading {
+                gap: 2rem;
+
+                &__content img {
+                    width: clamp(5rem, -1.502rem + 10.159vw, 7rem);
+                }
+            }
         }
 
         &--major {
@@ -428,6 +598,10 @@
                         &__reading {
                             text-align: right;
                         }
+                    }
+
+                    &__user__readings div img {
+                        height: clamp(1.5rem, 1.167rem + 0.521vw, 2rem);
                     }
                 }
 
@@ -492,6 +666,10 @@
                 &--users {
                     height: 230px;
                 }
+            }
+
+            &-user--reading__content img {
+                width: 5rem;
             }
         }
 

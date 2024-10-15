@@ -1,11 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/home/home.css">
+    <link rel="stylesheet" href="../../styles/header/header.css">
     <title>AMS - User</title>
 </head>
+
 <body>
-    
+    <div id="header-placeholder"></div>
+    <div class="homeDiv">
+        <div class="homeDiv--upper-user">
+            <div class="homeDiv--upper-user--name">
+                <div class="homeDiv--upper-user--name__user">
+                    <img src="../../assets/Users/user_1.png" alt="">
+                    <div>
+                        <h2> ERICA D. GAFFUD </h2>
+                        <h5> User </h5>
+                    </div>
+                </div>
+                <div class="homeDiv--upper-user--name__buttons">
+                    <i class="fa-regular fa-comment-dots"></i>
+                    <button>
+                        <img src="../../assets/Home/tap.png" alt="">
+                        Tap
+                    </button>
+                </div>
+            </div>
+            <div class="homeDiv--upper-user--reading">
+                <div class="homeDiv--upper-user--reading__content">
+                    <img src="../../assets/Home/heart-rate.png" alt="">
+                    <div>
+                        <h5>Heart Rate</h5>
+                        <h3>90</h3>
+                        <h6>bpm</h6>
+                    </div>
+                </div>
+                <div class="homeDiv--upper-user--reading__content" style="background-color: #DF4EB9;">
+                    <img src="../../assets/Home/oxygen.png" alt="">
+                    <div>
+                        <h5>Oxygen Level</h5>
+                        <h3>98</h3>
+                        <h6>%</h6>
+                    </div>
+                </div>
+                <div class="homeDiv--upper-user--reading__content" style="background-color: #FF8FE2;">
+                    <img src="../../assets/Home/pulse-rate.png" alt="">
+                    <div>
+                        <h5>Pulse Rate</h5>
+                        <h3>92</h3>
+                        <h6>bps</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="homeDiv--major">
+            <img src="../../assets/Home/subscribers-background.png" alt="">
+            <div class="homeDiv--major--chart">
+                <canvas id="myPieChart"></canvas>
+                <h3>MEASUREMENTS</h3>
+                <p>Normal</p>
+            </div>
+            <div class="homeDiv--major--measurement">
+                <h4>Real Time Measurement</h4>
+                <div class="homeDiv--major--measurements">
+                    <div class="homeDiv--major--measurements__user">
+                        <div class="homeDiv--major--measurements__user__date">
+                            <p>September 20, 2024</p>
+                            <p>10:21 pm</p>
+                        </div>
+                        <div class="homeDiv--major--measurements__user__readings">
+                            <div>
+                                <img src="../../assets/Home/heart-rate.png" alt="">
+                                <h6>90 bpm</h6>
+                            </div>
+                            <div>
+                                <img src="../../assets/Home/pulse-rate.png" alt="">
+                                <h6>91 bps</h6>
+                            </div>
+                            <div>
+                                <img src="../../assets/Home/oxygen.png" alt="">
+                                <h6>97%</h6>
+                            </div>
+                            <div>
+                                <img src="../../assets/Home/location.png" alt="">
+                                <h6>Location</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="homeDiv--major--measurements__user">
+                        <div class="homeDiv--major--measurements__user__date">
+                            <p>September 20, 2024</p>
+                            <p>10:21 pm</p>
+                        </div>
+                        <div class="homeDiv--major--measurements__user__readings">
+                            <div>
+                                <img src="../../assets/Home/heart-rate.png" alt="">
+                                <h6>90 bpm</h6>
+                            </div>
+                            <div>
+                                <img src="../../assets/Home/pulse-rate.png" alt="">
+                                <h6>91 bps</h6>
+                            </div>
+                            <div>
+                                <img src="../../assets/Home/oxygen.png" alt="">
+                                <h6>97%</h6>
+                            </div>
+                            <div>
+                                <img src="../../assets/Home/location.png" alt="">
+                                <h6>Location</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="homeDiv--major--measurement__outlineDiv"></div>
+            </div>
+        </div>
+        <div class="homeDiv--infograph">
+            <hr>
+            <h3>Accident Monitoring System</h3>
+            <div class="homeDiv--infograph--infoDiv">
+                <img src="../../assets/Infograph/infograph_1.png" alt="">
+                <h5>Real-time incident detection</h5>
+                <p>The system continuously monitors for accidents, providing instant recognition when an incident
+                    occurs.</p>
+            </div>
+            <div class="homeDiv--infograph--infoDiv">
+                <img src="../../assets/Infograph/infograph_2.png" alt="">
+                <h5>Real-time incident detection</h5>
+                <p>The system continuously monitors for accidents, providing instant recognition when an incident
+                    occurs.</p>
+            </div>
+            <div class="homeDiv--infograph--infoDiv">
+                <img src="../../assets/Infograph/infograph_3.png" alt="">
+                <h5>Real-time incident detection</h5>
+                <p>The system continuously monitors for accidents, providing instant recognition when an incident
+                    occurs.</p>
+            </div>
+            <div class="homeDiv--infograph--infoDiv">
+                <img src="../../assets/Infograph/infograph_4.png" alt="">
+                <h5>Real-time incident detection</h5>
+                <p>The system continuously monitors for accidents, providing instant recognition when an incident
+                    occurs.</p>
+            </div>
+            <img src="../../assets/Infograph/infograph.png" alt="">
+        </div>
+    </div>
+    <script src="../../scripts/home.js"></script>
+    <script src="../../scripts/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myPieChart').getContext('2d');
+        const myPieChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Active', 'Inactive'],
+                datasets: [{
+                    label: 'My Dataset',
+                    data: [300, 50],
+                    backgroundColor: [
+                        '#DC0083',
+                        'rgba(240, 240, 240, 1)'
+                    ],
+                    borderColor: [
+                        '#DC0083',
+                        'rgba(240, 240, 240, 1)'
+                    ],
+                    // borderRadius: 30
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    }
+                },
+                elements: {
+                    arc: {
+                        // borderRadius: 30
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
