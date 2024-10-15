@@ -4,7 +4,7 @@ $(document).on('submit', '#loginForm', function(event) {
     var password = $('#password').val();
 
     if (username && password) {
-        loadPage('');
+        loadPage('home', 'user-home');
     } else {
         alert('Please enter a valid username and password.');
     }
