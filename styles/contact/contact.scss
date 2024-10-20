@@ -1,3 +1,15 @@
+:root {
+    --switch-width: 10.5rem;
+    --switch-height: 2.3rem;
+    --switch-button-width: calc(10rem / 2);
+    --switch-button-height: 2rem;
+}
+
+.active {
+    background-color: #fff !important;
+    color: var(--accent-color-tint) !important;
+}
+
 .contactDiv {
     padding-inline: var(--padding-mobile);
     padding-bottom: 1rem;
@@ -5,7 +17,8 @@
 
 .contact--header {
     text-align: center;
-    padding-block: 2rem 1rem;
+    padding-block: 2rem 3rem;
+    position: relative;
 
     h1 {
         font-size: var(--tier-1);
@@ -15,6 +28,34 @@
         font-size: var(--tier-5);
         font-weight: unset;
         opacity: var(--text-opacity);
+    }
+
+    &__switch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.1rem;
+        
+        margin: 1rem auto;
+        width: var(--switch-width);
+        height: var(--switch-height);
+        background: #767DFF;
+        border: 1px solid #FFFFFF;
+        border-radius: 20px;
+
+        position: absolute;
+        top: 6.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+        button {
+            width: var(--switch-button-width);
+            height: var(--switch-button-height);
+            border-radius: 20px;
+            border: none;
+            background-color: transparent;
+            color: #fff;
+        }
     }
 
 }
@@ -109,9 +150,43 @@
     }
 }
 
+.contact--personal {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    padding-block: 2rem;
+    gap: clamp(0rem, -0.559rem + 3.252vw, 1rem);
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 0.882rem + 6.504vw, 4rem);
+
+        margin-block: clamp(1rem, -0.118rem + 6.504vw, 3rem);
+
+        h4 {
+            font-size: var(--tier-4);
+            font-weight: 100;
+        }
+    }
+
+    .mobile {
+        width: clamp(3rem, 1.882rem + 6.504vw, 5rem);
+        height: 100%;
+    }
+
+    .desktop {
+        display: none;
+    }
+}
+
 @media only screen and (min-width: 576px) {
     .contact--header {
-        padding-block: 3rem 1rem;
+        padding-block: 3rem 4rem;
+
+        &__switch {
+            top: 7.5rem;
+        }
     }
 
     .contact--ams {
@@ -155,6 +230,28 @@
             gap: clamp(3rem, -6.035rem + 18.824vw, 6rem);
         }
     }
+
+    .contact--personal {
+        flex-direction: row;
+        gap: 0;
+
+        div {
+            text-align: end;
+            gap: clamp(1.5rem, 0rem + 3.125vw, 5rem);
+            margin-block: clamp(3rem, 1.286rem + 3.571vw, 7rem);
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        .desktop {
+            display: block;
+
+            width: clamp(20rem, 11.429rem + 17.857vw, 40rem);
+            height: 100%;
+        }
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -166,6 +263,10 @@
 
     .contact--header {
         padding-block: clamp(4rem, 2.667rem + 2.083vw, 6rem) 1rem;
+
+        &__switch {
+            top: clamp(7.5rem, 6.167rem + 2.083vw, 9.5rem);
+        }
     }
 
     .contact--ams {
@@ -199,6 +300,7 @@
 
         &--contacts {
             gap: clamp(7rem, 5rem + 3.125vw, 10rem);
+            padding-block: 4rem 2rem;
         }
     }
 }

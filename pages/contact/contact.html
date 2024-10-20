@@ -16,11 +16,11 @@
     <div id="header-placeholder"></div>
     <div class="contactDiv">
         <div class="contact--header">
-            <h1>Get in touch!</h1>
-            <h5>For any inquiries or support, do not hesitate to contact us under any circumstances.</h5>
+            <h1 class="contact--header--title">Get in touch!</h1>
+            <h5 class="contact--header--subtitle">For any inquiries or support, do not hesitate to contact us under any circumstances.</h5>
             <div class="contact--header__switch">
-                <button>AMS</button>
-                <button>Personal</button>
+                <button id="amsTab" class="active">AMS</button>
+                <button id="personalTab">Personal</button>
             </div>
         </div>
         <div class="contact--ams">
@@ -57,8 +57,17 @@
                 <img src="../../assets/Contact/ams-contact.png" alt="">
             </form>
         </div>
-        <div class="contact--personal"></div>
+        <div class="contact--personal">
+            <div>
+                <h4>+63935-458-3213</h4>
+                <h4>ericadurangaffud@gmail.com</h4>
+                <h4>23F Chatam, BGC, Taguig 2106</h4>
+            </div>
+            <img src="../../assets/Contact/personal-mobile.png" class="mobile">
+            <img src="../../assets/Contact/personal-desktop.png" class="desktop">
+        </div>
     </div>
     <script defer src="../../scripts/global.js"></script>
+    <script src="../../scripts/contact.js"></script>
 </body>
-</html>                                                                         
+</html>
