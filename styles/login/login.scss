@@ -2,6 +2,13 @@
     --margin-top: -30%;
 }
 
+.error {
+    color: red;
+    font-size: 12px;
+    min-height: 16px;
+    margin-top: 5px;
+}
+
 .login-container {
     background: linear-gradient(180deg, #030637 0%, #3C0753 100%); /* Gradient overlay */
     height: 100vh;
@@ -74,6 +81,17 @@
                 width: 60vw;
                 max-width: 14rem;
                 margin: auto;
+
+                &:disabled {
+                    background-color: #a544d0;
+                    color: #b7b7b7;
+                }
+            }
+
+            #login-error {
+                height: 15px;
+                color: #a00000;
+                font-size: var(--tier-6);
             }
         }
 

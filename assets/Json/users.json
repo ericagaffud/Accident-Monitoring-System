@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "username": "erica_gaffud",
+            "password": "ericasaquing21",
+            "role": "benefactor",
+            "attempt": 0
+        },
+        {
+            "username": "thomas_saquing_jr",
+            "password": "thomassaquing21",
+            "role": "user",
+            "attempt": 0
+        }
+    ]
+}
