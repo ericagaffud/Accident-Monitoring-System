@@ -80,7 +80,7 @@
 }
 .login-container .login-form form #login-error {
   height: 15px;
-  color: #a00000;
+  color: #ff7979;
   font-size: var(--tier-6);
 }
 .login-container .login-form-decor {

@@ -1,10 +1,13 @@
 <div id="header" class="header">
+    <div class="header-backdrop"></div>
     <img src="../../assets/Logo/ams-logo.png" alt="">
     <div class="header-menu">
-        <i id="headerMenu" class="fa-solid fa-ellipsis"></i>
+        <button id="headerMenu">
+            <i class="fa-solid fa-ellipsis"></i>
+        </button>
         <div class="header-menu-nav">
             <div class="header-menu-nav-title">
-                <div class="header-menu-nav-title-name">
+                <div class="header-menu-nav-title-name" onclick="logout()">
                     <h1> Erica D. Gaffud</h1>
                     <i class="fa-solid fa-circle-user"></i>
                 </div>
@@ -15,11 +18,71 @@
             </div>
             <nav>
                 <div class="nav-items">
-                    <a href="">Home</a>
-                    <a href="">Contact</a>
+                    <a onclick="goToHome()">Home</a>
+                    <a onclick="goToContact()">Contact</a>
                 </div>
                 <img src="../../assets/Logo/ams-logo.png" alt="">
             </nav>
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal-overlay">
+    <div class="modal-content">
+        <h3>Confirmation</h3>
+        <p>Are you sure you want to log out?</p>
+        <div class="buttons">
+            <button class="confirm-logout">Yes, Logout</button>
+            <button class="cancel-logout">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#headerMenu').click(function(){
+        console.log("Burger!");
+        $('.header-menu-nav').css('transform', 'translateX(0%)');
+        $('.header-backdrop').css('display', 'block');
+    });
+
+    $('.header-backdrop').click(function(){
+        $('.header-menu-nav').css('transform', 'translateX(100%)');
+        $('.header-backdrop').css('display', 'none');
+    });
+
+    function goToHome() {
+        const userRole = localStorage.getItem('user-role');
+        
+        if (userRole === 'benefactor') {
+            window.location.href = '/pages/home/benefactor-home.html';
+        } else if (userRole === 'user') {
+            window.location.href = '/pages/home/user-home.html';
+        }
+    }
+
+    function goToContact() {
+        console.log('Contact Clicked!!!');
+        window.location.href = "/pages/contact/contact.html"
+    }
+
+    function logout() {
+        console.log('Logout Clicked!!!');
+
+        $('.modal-overlay').fadeIn();
+    }
+
+    $('.confirm-logout').click(function() {
+        $('.modal-overlay').fadeOut();
+        window.location.href = "/";
+    });
+
+    $('.cancel-logout').click(function() {
+        $('.modal-overlay').fadeOut();
+    });
+
+    $('.modal-overlay').click(function(event) {
+        if ($(event.target).is('.modal-overlay')) {
+            $('.modal-overlay').fadeOut();
+        }
+    });
+</script>

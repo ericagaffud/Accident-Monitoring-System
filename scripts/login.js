@@ -28,6 +28,8 @@ $(document).ready(function() {
             const user = users.find(u => u.username === username && u.password === password);
 
             if (user) {
+                localStorage.setItem('user-role', user.role);
+
                 if (user.role === 'benefactor') {
                     window.location.href = 'pages/home/benefactor-home.html';
                 } else if (user.role === 'user') {
