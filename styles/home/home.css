@@ -40,7 +40,7 @@
 }
 .homeDiv--upper--risks--users {
   height: 200px;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 .homeDiv--upper--risks--users__user {
   display: flex;
@@ -90,7 +90,10 @@
   gap: 10px;
   padding-block: 15px;
 }
-.homeDiv--upper--notifs__notif__white img {
+.homeDiv--upper--notifs__notif__white > div {
+  position: relative;
+}
+.homeDiv--upper--notifs__notif__white > div img {
   width: 90px;
 }
 .homeDiv--upper--notifs__notif__white h3 {

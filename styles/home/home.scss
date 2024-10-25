@@ -44,7 +44,7 @@
 
             &--users {
                 height: 200px;
-                overflow-y: scroll;
+                overflow-y: hidden;
 
                 &__user {
                     display: flex;
@@ -105,9 +105,13 @@
                     gap: 10px;
                     padding-block: 15px;
 
-                    img {
-                        width: 90px;
+                    > div {
+                        position: relative;
+                        img {
+                            width: 90px;
+                        }
                     }
+
 
                     h3 {
                         color: var(--secondary-color);

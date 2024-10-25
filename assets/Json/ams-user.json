@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "address": "123 Maple Street, Springfield",
+        "image": "../../assets/Users/user_1.png"
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "address": "456 Oak Avenue, Rivertown",
+        "image": "../../assets/Users/user_2.png"
+    },
+    {
+        "id": 3,
+        "name": "Michael Johnson",
+        "address": "789 Birch Road, Greenfield",
+        "image": "../../assets/Users/user_3.png"
+    },
+    {
+        "id": 4,
+        "name": "Emily Brown",
+        "address": "101 Pine Lane, Hill Valley",
+        "image": "../../assets/Users/user_1.png"
+    },
+    {
+        "id": 5,
+        "name": "Daniel Davis",
+        "address": "202 Cedar Drive, Lake City",
+        "image": "../../assets/Users/user_2.png"
+    },
+    {
+        "id": 6,
+        "name": "Sophia Wilson",
+        "address": "303 Elm Street, Riverbend",
+        "image": "../../assets/Users/user_3.png"
+    },
+    {
+        "id": 7,
+        "name": "James Martinez",
+        "address": "404 Walnut Blvd, Pleasantville",
+        "image": "../../assets/Users/user_1.png"
+    },
+    {
+        "id": 8,
+        "name": "Olivia Garcia",
+        "address": "505 Maple Avenue, Brookside",
+        "image": "../../assets/Users/user_2.png"
+    },
+    {
+        "id": 9,
+        "name": "William Anderson",
+        "address": "606 Oak Lane, Meadowbrook",
+        "image": "../../assets/Users/user_3.png"
+    },
+    {
+        "id": 10,
+        "name": "Ava Taylor",
+        "address": "707 Birch Way, Sunnyside",
+        "image": "../../assets/Users/user_1.png"
+    }
+]
