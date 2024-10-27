@@ -72,6 +72,8 @@
   border: 0.6px solid rgba(255, 255, 255, 0.5);
   background-color: #fff;
   height: var(--upper-height);
+  overflow: hidden;
+  position: relative;
 }
 .homeDiv--upper--notifs > h4 {
   border-left: 2px solid var(--accent-color);
@@ -83,12 +85,19 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 90%;
+  transform: translateX(100%);
+  transition: transform 2s ease-out;
 }
 .homeDiv--upper--notifs__notif__white {
   display: flex;
   align-items: center;
   gap: 10px;
   padding-block: 15px;
+  background-color: #fff;
 }
 .homeDiv--upper--notifs__notif__white > div {
   position: relative;
@@ -109,6 +118,7 @@
   margin: 0 var(--negative-upper-padding) var(--negative-upper-padding);
   padding: 14px;
   border-radius: 0 0 20px 20px;
+  height: 5.5rem;
 }
 .homeDiv--upper--notifs__notif__colored h5 {
   font-size: var(--tier-5);
@@ -116,6 +126,12 @@
 .homeDiv--upper--notifs__notif__colored h5:nth-child(2) {
   font-weight: 100;
   opacity: var(--text-opacity);
+}
+.homeDiv--upper--notifs__notif.slide-in {
+  transform: translateX(0);
+}
+.homeDiv--upper--notifs__notif.slide-out {
+  transform: translateX(-100%);
 }
 .homeDiv--upper-user--name {
   margin-bottom: 1rem;

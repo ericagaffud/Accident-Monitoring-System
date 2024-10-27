@@ -2,7 +2,7 @@ $(document).ready(function() {
     $.getJSON('../../assets/Json/ams-user.json', function(users) {
         let currentIndex = 0;
 
-        function addNewUser() {
+        function addNewRisksRecord() {
             if (currentIndex >= users.length) {
                 currentIndex = 0;
             }
@@ -10,8 +10,9 @@ $(document).ready(function() {
             const user = users[currentIndex];
             const randomHeartRate = Math.floor(Math.random() * (100 - 60 + 1)) + 60; // Random heart rate between 60-100
             const currentTime = new Date().toLocaleString();
+            const randomTime = Math.floor(Math.random() * 59) + 1;
 
-            const newUserHtml = `
+            const recentRisks = `
                 <div class="homeDiv--upper--risks--users__user">
                     <img src="${user.image}" alt="${user.name}">
                     <div>
@@ -22,18 +23,15 @@ $(document).ready(function() {
                 </div>
             `;
 
-            const usersContainer = $('.homeDiv--upper--risks--users');
+            const recentRisksContainer = $('.homeDiv--upper--risks--users');
 
-            usersContainer.append(newUserHtml);
+            recentRisksContainer.append(recentRisks);
 
-            const itemHeight = usersContainer.find('.homeDiv--upper--risks--users__user').last().outerHeight();
-
-            usersContainer.animate({
-                scrollTop: usersContainer.scrollTop() + itemHeight
+            const itemHeight = recentRisksContainer.find('.homeDiv--upper--risks--users__user').last().outerHeight();
+            recentRisksContainer.animate({
+                scrollTop: recentRisksContainer.scrollTop() + itemHeight
             }, 500, function() {
-
-                const firstUser = usersContainer.find('.homeDiv--upper--risks--users__user').first();
-
+                const firstUser = recentRisksContainer.find('.homeDiv--upper--risks--users__user').first();
                 if (firstUser.position().top + itemHeight < 0) {
                     firstUser.remove();
                 }
@@ -42,6 +40,61 @@ $(document).ready(function() {
             currentIndex++;
         }
 
-        setInterval(addNewUser, 2000);
+        addNewRisksRecord();
+        setInterval(addNewRisksRecord, 2000);
+
+        function addNewNotif() {
+            if (currentIndex >= users.length) {
+                currentIndex = 0;
+            }
+
+            const user = users[currentIndex];
+            const randomTime = Math.floor(Math.random() * 59) + 1;
+
+            const recentNotification = `
+                <div class="homeDiv--upper--notifs__notif">
+                    <div class="homeDiv--upper--notifs__notif__white">
+                        <div>
+                            <img src="${user.image}" alt="${user.name}">
+                            <div class="user-status"></div>
+                        </div>
+                        <h3>${user.name}</h3>
+                    </div>
+                    <div class="homeDiv--upper--notifs__notif__colored">
+                        <h5>${user.address}</h5>
+                        <h5>Connected ${randomTime} minute${randomTime > 1 ? 's' : ''} ago</h5>
+                    </div>
+                </div>
+            `;
+
+            const recentNotifContainer = $('.homeDiv--upper--notifs');
+
+            recentNotifContainer.append(recentNotification);
+
+            const newNotif = recentNotifContainer.find('.homeDiv--upper--notifs__notif').last();
+            const currentNotif = recentNotifContainer.find('.homeDiv--upper--notifs__notif').first();
+
+            newNotif.css('transform', 'translateX(100%)');
+
+            setTimeout(function() {
+                currentNotif.css('transform', 'translateX(-100%)');
+
+                setTimeout(function() {
+                    newNotif.css('transform', 'translateX(0)');
+                }, 500);
+
+                currentNotif.one('transitionend', function(event) {
+                    if (event.originalEvent.propertyName === 'transform') {
+                        $(this).remove();
+                    }
+                });
+            }, 10);
+
+            currentIndex++;
+        }
+
+        addNewNotif();
+
+        setInterval(addNewNotif, 3000);
     });
 });
