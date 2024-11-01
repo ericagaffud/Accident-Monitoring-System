@@ -243,13 +243,15 @@
 .homeDiv--major--users-carousel {
   display: flex;
   width: 100%;
-  max-width: 30rem;
-  overflow-x: scroll;
-  gap: 1rem;
+  max-width: 24rem;
+  overflow-x: hidden;
+  gap: 0.5rem;
   padding-block: 2rem;
+  transition: transform 0.5s ease-in-out;
 }
 .homeDiv--major--users-carousel img {
   width: 70px;
+  flex-shrink: 0;
 }
 .homeDiv--major--measurement {
   display: flex;

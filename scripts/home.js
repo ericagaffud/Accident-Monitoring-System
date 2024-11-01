@@ -94,7 +94,43 @@ $(document).ready(function() {
         }
 
         addNewNotif();
-
         setInterval(addNewNotif, 3000);
+
+        // Users Carousel
+        const activeUsers = users.filter(user => user.active);
+        const imagePaths = activeUsers.map(user => user.image);
+
+        const carouselContainer = $('.homeDiv--major--users-carousel');
+
+        function addNewImage() {
+            if (currentIndex >= imagePaths.length) {
+                currentIndex = 0; 
+            }
+    
+            const newImage = $('<img>').attr('src', imagePaths[currentIndex]);
+            carouselContainer.append(newImage);
+    
+            const imageWidth = newImage.outerWidth(true);
+            const containerWidth = carouselContainer.width();
+            const totalWidth = carouselContainer.get(0).scrollWidth;
+    
+            if (totalWidth > containerWidth) {
+                carouselContainer.animate({
+                    scrollLeft: totalWidth - containerWidth
+                }, 500, function() {
+                    const firstImage = carouselContainer.find('img').first();
+                    const firstImageRightEdge = firstImage.offset().left + firstImage.outerWidth();
+    
+                    if (firstImageRightEdge < carouselContainer.offset().left) {
+                        firstImage.remove();
+                    }
+                });
+            }
+    
+            currentIndex++;
+        }
+    
+        addNewImage();
+        setInterval(addNewImage, 3000);
     });
 });
