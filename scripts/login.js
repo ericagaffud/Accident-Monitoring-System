@@ -23,7 +23,7 @@ $(document).ready(function() {
         const username = $('#username').val().trim();
         const password = $('#password').val().trim();
 
-        $.getJSON('./assets/json/users.json', function(data) {
+        $.getJSON('./assets/Json/users.json', function(data) {
             const users = data.users;
             const user = users.find(u => u.username === username && u.password === password);
 
