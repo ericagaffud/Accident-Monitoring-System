@@ -39,6 +39,12 @@
 </div>
 
 <script>
+    var pathName = window.location.pathname.split('/');
+    var title = pathName[1];
+    var url = title == 'Accident-Monitoring-System' ? "/Accident-Monitoring-System" : '';
+
+    console.log("TITLE: ", url);
+
     $('#headerMenu').click(function(){
         console.log("Burger!");
         $('.header-menu-nav').css('transform', 'translateX(0%)');
@@ -54,15 +60,15 @@
         const userRole = localStorage.getItem('user-role');
         
         if (userRole === 'benefactor') {
-            window.location.href = '/pages/home/benefactor-home.html';
+            window.location.href = url + '/pages/home/benefactor-home.html';
         } else if (userRole === 'user') {
-            window.location.href = '/pages/home/user-home.html';
+            window.location.href = url + '/pages/home/user-home.html';
         }
     }
 
     function goToContact() {
         console.log('Contact Clicked!!!');
-        window.location.href = "/pages/contact/contact.html"
+        window.location.href = url + "/pages/contact/contact.html"
     }
 
     function logout() {
@@ -73,7 +79,7 @@
 
     $('.confirm-logout').click(function() {
         $('.modal-overlay').fadeOut();
-        window.location.href = "/";
+        window.location.href = url + "/";
     });
 
     $('.cancel-logout').click(function() {
