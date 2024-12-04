@@ -11,6 +11,18 @@
             "password": "thomassaquing21",
             "role": "user",
             "attempt": 0
+        },
+        {
+            "username": "guest_user",
+            "password": "Accidentm0nit0ring0621!",
+            "role": "user",
+            "attempt": 0
+        },
+        {
+            "username": "guest_benefactor",
+            "password": "Accidentm0nit0ring0621!",
+            "role": "user",
+            "attempt": 0
         }
     ]
 }
