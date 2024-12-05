@@ -21,7 +21,7 @@
         {
             "username": "guest_benefactor",
             "password": "Accidentm0nit0ring0621!",
-            "role": "user",
+            "role": "benefactor",
             "attempt": 0
         }
     ]
